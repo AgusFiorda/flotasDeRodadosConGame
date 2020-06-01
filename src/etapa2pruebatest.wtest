@@ -1,0 +1,7 @@
+import pedidosDeTraslado.*
+test "testX" {
+
+	pedidos.coloresIncompatibles(rojo)
+	assert.equals(rojo,pedidos.coloresN)
+
+}
