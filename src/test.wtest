@@ -1,7 +1,7 @@
 import rodados.*
 import dependencia.*
 import trafic.*
-/*
+
 test "testX" {
 		
 		const deportes = new Dependencia()
@@ -11,22 +11,22 @@ test "testX" {
 		cultura.cantidadEmpleados(31)
 		
 		const cachito= new ChevroletCorsa()
-		cachito.agregarColor("rojo")
+		cachito.color(rojo)
 		
 		//flota deportes
 		deportes.agregarAFlota(cachito)
 		
 		const corsa2= new ChevroletCorsa()
-		corsa2.agregarColor("azul")
+		corsa2.color(azul)
 		const corsa3= new ChevroletCorsa()
-		corsa3.agregarColor("verde")
+		corsa3.color(verde)
 		const kwid1= new RenaultKwid()
 		kwid1.tanqueAdicional()
 		const auEsp1= new AutosEspeciales()
-		auEsp1.laCapacidades(5)
-		auEsp1.laVelMaxEs(160)
-		auEsp1.pesoEs(1200)
-		auEsp1.colorEs("beige")
+		auEsp1.capacidad(5)
+		auEsp1.velMax(160)
+		auEsp1.peso(1200)
+		auEsp1.color(beige)
 		
 		deportes.agregarAFlota(corsa2)
 		deportes.agregarAFlota(corsa3)
@@ -35,12 +35,12 @@ test "testX" {
 		
 		
 		assert.that(deportes.estaBienEquipada())
-		assert.equals("beige",deportes.colorDelRodadoMasRapido())
+		assert.equals(beige,deportes.colorDelRodadoMasRapido())
 		assert.equals(6450,deportes.pesoTotalFlota())
-		assert.equals(7,deportes.capacidadTotalEnColor("azul"))
-		assert.that(deportes.esGrande())
+		assert.equals(7,deportes.capacidadTotalEnColor(azul))
+	 	assert.that(deportes.esGrande())
 		assert.equals(25,deportes.capacidadFaltante())
-		
+	
 		
 		//flota cultura
 		
@@ -53,25 +53,17 @@ test "testX" {
 		cultura.agregarAFlota(kwid01)
 		cultura.agregarAFlota(kwid02)
 		cultura.agregarAFlota(kwid03)
-		trafic.bataton()
-		trafic.interiorPopular()
+		trafic.motor(motorBataton)
+		trafic.interior(interiorPopular)
 		cultura.agregarAFlota(trafic)
 		
 		
 		assert.notThat(cultura.estaBienEquipada())
-		assert.equals("rojo",cultura.colorDelRodadoMasRapido())
+	 	assert.equals(rojo,cultura.colorDelRodadoMasRapido())
 		assert.equals(10700,cultura.pesoTotalFlota())
-		assert.equals(10,cultura.capacidadTotalEnColor("azul"))
+	 	assert.equals(10,cultura.capacidadTotalEnColor(azul))
 		assert.notThat(cultura.esGrande())
 		assert.equals(5,cultura.capacidadFaltante())
-		
+	
 }
 
-*/
-test "nuevo"{
-	
-		trafic.interior(interiorPopular)
-		trafic.motor(motorBataton)
-		
-		assert.equals(5500,trafic.peso())
-}

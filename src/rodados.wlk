@@ -1,20 +1,9 @@
 class ChevroletCorsa {
-	var property color 
+	var property color=[]
 	
 	method capacidad(){
 		return 4
 	}
-	
-	/*method agregarColor(setcolor){
-		color=setcolor
-		
-	}
-	
-	method color(){
-		return color
-	}*/
-	
-	
 	
 	
 	method velMax(){
@@ -30,13 +19,9 @@ class ChevroletCorsa {
 
 
 
-
-
-
-
-
 class RenaultKwid {
 	var adicional=false
+	
 	
 	method capacidad(){
 		if(adicional){
@@ -51,9 +36,7 @@ class RenaultKwid {
 		return 110
 		
 	}
-	method color(){
-		return "azul"
-	}
+	
 	method peso(){
 		if(adicional){
 			return 1350
@@ -64,63 +47,24 @@ class RenaultKwid {
 	method tanqueAdicional(){
 		adicional=true
 	}
+	method color(){
+		return azul
+	}
 }
 
 
 class AutosEspeciales {
-	var cap=0
-	var vel=0
-	var peso=0
-	var color
-	method laCapacidades(setcap){
-		cap=setcap
-	}
-	method laVelMaxEs(setvel){
-		vel=setvel
-	}
-	method colorEs(setcol){
-		color=setcol
-	}
-	method pesoEs(setpes){
-		peso=setpes
-	}
-	
-	method capacidad(){
-		return cap
-	}
-	method velMax(){
-		return vel
-	}
-	method color(){
-		return color
-	}
-	method peso(){
-		return peso
-	}
+	var property capacidad=0
+	var property velMax=0
+	var property peso=0
+	var property color=[]
+
 }
-object colores{
-	var colores=[rojo,verde,azul,blanco,negro]
-	
-	method agregarColor(color){
-		colores.add(color)
-	}
-	
-}
-object rojo{
-	
-}
-object verde{
-	
-}
-object blanco{
-	
-}
-object azul{
-	
-}
-object violeta{
-	
-}
-object negro{
-	
-}
+
+object beige{}
+object rojo{}
+object verde{}
+object blanco{}
+object azul{}
+object violeta{}
+object negro{}

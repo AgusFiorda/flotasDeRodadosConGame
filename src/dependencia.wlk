@@ -17,18 +17,12 @@ class Dependencia {
 		return rod.sum({cosa=>cosa.peso()})
 	}
 	method estaBienEquipada(){
-		if(rod.size()>3 and rod.all({cosa=>cosa.velMax()>100})){
-			return true
-		}return false
+	return (rod.size()>3 and rod.all({cosa=>cosa.velMax()>100}))
 	}
-	method capacidadTotalEnColor(color){
-			var suma=[]
-		suma+= rod.filter({cosa=> cosa.color()=="azul"})
+	method capacidadTotalEnColor(setcolor){
 		
-			return 	suma.sum({cosa=>cosa.capacidad()})
-				
-			
-		
+		var suma= rod.filter({cosa=>cosa.color()==setcolor})
+		return suma.sum({cosa=>cosa.capacidad()})
 	}
 	method colorDelRodadoMasRapido(){
 		return rod.max({cosa=>cosa.velMax()}).color()
