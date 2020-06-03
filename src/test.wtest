@@ -1,7 +1,7 @@
 import rodados.*
 import dependencia.*
 import trafic.*
-
+import pedidosDeTraslado.*
 test "testX" {
 		
 		const deportes = new Dependencia()
@@ -66,4 +66,5 @@ test "testX" {
 		assert.equals(5,cultura.capacidadFaltante())
 	
 }
+
 

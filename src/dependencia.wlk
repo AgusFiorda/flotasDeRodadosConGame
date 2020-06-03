@@ -1,5 +1,6 @@
 import rodados.*
 import trafic.*
+import pedidosDeTraslado.*
 class Dependencia {
 	var empleados=0
 	const rod=[]

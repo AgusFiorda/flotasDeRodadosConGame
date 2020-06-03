@@ -1,0 +1,47 @@
+import trafic.*
+import rodados.*
+import dependencia.*
+import pedidosDeTraslado.*
+
+
+test "pedidos traslado 1"{
+	const pedido1= new Pedidos()
+	const cachito= new ChevroletCorsa()
+	cachito.color(rojo)
+		
+	pedido1.coloresNo([azul,negro])	
+	pedido1.distancia(960)
+	pedido1.tiempoMax(8)
+	pedido1.cantidadPasajeros(4)
+	
+	assert.equals(120,pedido1.velocidadRequerida())
+	assert.that(pedido1.puedeSatisfacer(cachito))
+	
+	assert.equals(9,pedido1.relajar())
+	
+	/*2do test */
+	
+	
+	const pedido2= new Pedidos()
+	pedido2.coloresNo([azul,negro,rojo])	
+	pedido2.distancia(960)
+	pedido2.tiempoMax(8)
+	pedido2.cantidadPasajeros(6)
+	
+	
+	assert.notThat(pedido2.puedeSatisfacer(cachito))
+	assert.equals(7,pedido1.acelerar())
+	
+	/*test 3 */
+	const pedido3= new Pedidos()
+	
+	pedido3.coloresNo([azul,negro])	
+	pedido3.distancia(960)
+	pedido3.tiempoMax(6)
+	pedido3.cantidadPasajeros(4)
+	
+	assert.equals(160,pedido3.velocidadRequerida())
+	assert.notThat(pedido3.puedeSatisfacer(cachito))
+	
+
+}
