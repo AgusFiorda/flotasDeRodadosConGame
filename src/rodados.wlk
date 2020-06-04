@@ -1,5 +1,10 @@
+import wollok.game.*
+
 class ChevroletCorsa {
 	var property color=[]
+	var	property position= game.at(4,7)
+	var property image="autitorojo.png"
+	
 	
 	method capacidad(){
 		return 4
