@@ -4,12 +4,16 @@ import pedidosDeTraslado.*
 class Dependencia {
 	var empleados=0
 	const rod=[]
+	const  pedidos=[]
 	method cantidadEmpleados(setcantidad){
 		empleados=setcantidad
 	}	
 	method agregarAFlota(rodado){
 		rod.add(rodado)
 		
+	}
+	method mostrarRodados(){
+		return rod
 	}
 	method quitarDeFlota(rodado){
 		rod.remove(rodado)
@@ -33,8 +37,23 @@ class Dependencia {
 		return empleados- rod.sum({cosa=>cosa.capacidad()})
 	}
 	method esGrande(){
-		
 		return empleados>=40 and rod.size()>=5
-		
 	}
+	method quitarPedido(pedido){
+		pedidos.remove(pedido)
+	}
+	method agregarPedido(pedido){
+		pedidos.add(pedido)
+	}
+	method mostrarPedidos(){
+		return pedidos
+	}
+	method pedidosTotalPasajeros(){
+		return pedidos.sum({cosa=>cosa.cantidadPasajeros()})
+	}
+	method pedidosNoSatisfechos(){
+		return pedidos.find({cosa=>cosa.puedeSatisfacer(rod.filter({cosa1=>cosa1.mostrarRodado()}))})
+	}
+	
+	
 }

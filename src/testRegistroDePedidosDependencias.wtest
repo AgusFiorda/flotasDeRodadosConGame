@@ -1,0 +1,58 @@
+import trafic.*
+import rodados.*
+import dependencia.*
+import pedidosDeTraslado.*
+
+test "testX" {
+
+	const pedido1= new Pedidos()
+
+		
+	pedido1.coloresNo([azul,negro])	
+	pedido1.distancia(960)
+	pedido1.tiempoMax(8)
+	pedido1.cantidadPasajeros(4)
+	
+	const pedido2= new Pedidos()
+	pedido2.coloresNo([azul,negro,rojo])	
+	pedido2.distancia(960)
+	pedido2.tiempoMax(8)
+	pedido2.cantidadPasajeros(6)
+
+	const pedido3= new Pedidos()
+	
+	pedido3.coloresNo([azul,negro,verde])	
+	pedido3.distancia(960)
+	pedido3.tiempoMax(6)
+	pedido3.cantidadPasajeros(4)
+	
+	
+	const deportes = new Dependencia()
+	deportes.cantidadEmpleados(45)
+	const corsa2= new ChevroletCorsa()
+		corsa2.color(azul)
+		const corsa3= new ChevroletCorsa()
+		corsa3.color(verde)
+		const kwid1= new RenaultKwid()
+		const auEsp1= new AutosEspeciales()
+		auEsp1.capacidad(5)
+		auEsp1.velMax(160)
+		auEsp1.peso(1200)
+		auEsp1.color(beige)
+		
+		//trafic.interior(interiorPopular)
+		//trafic.motor(motorPulenta)
+		
+		deportes.agregarAFlota(corsa2)
+		deportes.agregarAFlota(corsa3)
+		deportes.agregarAFlota(kwid1)
+		deportes.agregarAFlota(auEsp1)
+		//deportes.agregarAFlota(trafic)
+
+		deportes.agregarPedido(pedido1)
+		deportes.agregarPedido(pedido2)
+		deportes.agregarPedido(pedido3)
+		
+		assert.equals(14,deportes.pedidosTotalPasajeros())
+		//assert.equals(pedido2,deportes.pedidosNoSatisfechos())
+}

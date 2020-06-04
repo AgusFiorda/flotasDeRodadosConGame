@@ -5,7 +5,11 @@ import pedidosDeTraslado.*
 
 
 test "pedidos traslado 1"{
+	
+	
 	const pedido1= new Pedidos()
+	
+	
 	const cachito= new ChevroletCorsa()
 	cachito.color(rojo)
 		
