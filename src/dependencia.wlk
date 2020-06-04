@@ -5,6 +5,8 @@ class Dependencia {
 	var empleados=0
 	const rod=[]
 	const  pedidos=[]
+
+
 	method cantidadEmpleados(setcantidad){
 		empleados=setcantidad
 	}	
@@ -51,8 +53,27 @@ class Dependencia {
 	method pedidosTotalPasajeros(){
 		return pedidos.sum({cosa=>cosa.cantidadPasajeros()})
 	}
-	method pedidosNoSatisfechos(){
-		return pedidos.find({cosa=>cosa.puedeSatisfacer(rod.filter({cosa1=>cosa1.mostrarRodado()}))})
+	
+	
+	
+	
+	method pedidosFrustrados(){
+		return pedidos.filter({
+			cosa=> not self.puedeSatis(cosa)
+		})
+		
+	}
+	method puedeSatis(pedido){
+		return rod.any({ 
+			cosa=> pedido.puedeSatisfacer(cosa)
+			
+		})
+	}
+	
+	
+	
+	method colorIncompatible(color){
+		return pedidos.all({cosa=>cosa.colorIncomp(color)})
 	}
 	
 	

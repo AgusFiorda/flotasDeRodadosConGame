@@ -9,14 +9,22 @@ class Pedidos {
 	var property coloresNo=[]
 	var velReq=0
 	
+	
 	method velocidadRequerida(){
 		 velReq= distancia/tiempoMax
 			return velReq 
 	}
 	method puedeSatisfacer(auto){
-		return (auto.velMax()-velReq)>10 and auto.capacidad()>=cantidadPasajeros and auto.color()!=coloresNo
+		return  (auto.velMax()-velReq)>10 and auto.capacidad()>=cantidadPasajeros and auto.color()!=coloresNo
+			
+		
 			
 	}
+	method colorIncomp(color){
+		return coloresNo.any({cosa=>cosa==color})
+	}
+
+	
 	method acelerar(){
 		return self.tiempoMax()-1
 	}

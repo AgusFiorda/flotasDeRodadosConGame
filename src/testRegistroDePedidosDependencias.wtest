@@ -54,5 +54,9 @@ test "testX" {
 		deportes.agregarPedido(pedido3)
 		
 		assert.equals(14,deportes.pedidosTotalPasajeros())
-		//assert.equals(pedido2,deportes.pedidosNoSatisfechos())
+		assert.equals([pedido2],deportes.pedidosFrustrados())
+		assert.that(deportes.colorIncompatible(azul))
+		assert.notThat(deportes.colorIncompatible(rojo))
+		//assert.that(deportes.pedidosNoSatisfechos())
+		
 }
