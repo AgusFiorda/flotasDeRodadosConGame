@@ -1,0 +1,9 @@
+import rodados.*
+import wollok.game.*
+
+
+test "testX" {
+const corsa1= new ChevroletCorsa()
+	assert.that(corsa1.pasoPor(game.at(6,7)))
+
+}

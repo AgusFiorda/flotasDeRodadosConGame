@@ -6,14 +6,26 @@ program corsasEnElGame {
 	game.height(15)
 	game.width(15)
 	const corsa1= new ChevroletCorsa()
-	game.boardGround("fondo.jpg")
+	game.boardGround("fondo.png")
 	
 	game.addVisual(corsa1)
 	
-	keyboard.up().onPressDo({corsa1.position(corsa1.position().up(1))})
-	keyboard.down().onPressDo({corsa1.position(corsa1.position().down(1))})
-	keyboard.left().onPressDo({corsa1.position(corsa1.position().left(1))})
-	keyboard.right().onPressDo({corsa1.position(corsa1.position().right(1))})
+	keyboard.up().onPressDo({corsa1.moveteArriba()})//x=4 y=8
+	keyboard.left().onPressDo({corsa1.moveteIzquierda()})//x=3 y=8
+	keyboard.down().onPressDo({corsa1.moveteAbajo()})//x=3 y=7
+	keyboard.right().onPressDo({corsa1.moveteDerecha()})//x=4 y=6
+	
+	keyboard.r().onPressDo({
+			corsa1.image("autitorojo.png")		
+	})
+	keyboard.v().onPressDo({
+			corsa1.image("autitoverde.png")		
+	})
+	keyboard.a().onPressDo({
+			corsa1.image("autitoazul.png")		
+	})
+	
+	
 	
 	
 	game.start()

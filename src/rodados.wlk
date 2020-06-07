@@ -3,9 +3,20 @@ import wollok.game.*
 class ChevroletCorsa {
 	var property color=[]
 	var	property position= game.at(4,7)
-	var property image="autitorojo.png"
+	var property image= "corsita.png"
 	
-	
+	method moveteDerecha(){
+		self.position(self.position().right(1))
+	}
+	method moveteIzquierda(){
+		self.position(self.position().left(1))
+	}
+	method moveteArriba(){
+		self.position(self.position().up(1))
+	}
+	method moveteAbajo(){
+		self.position(self.position().down(1))
+	}
 	method capacidad(){
 		return 4
 	}
@@ -14,12 +25,18 @@ class ChevroletCorsa {
 	method velMax(){
 		return 150
 	}
-	
-	
+
 	
 	method peso(){
 		return 1300
 	}
+	
+	method pasoPor(posicion){
+//		return position.all({cosa=>cosa.position()==position()})
+	}
+	
+	
+	
 }
 
 
